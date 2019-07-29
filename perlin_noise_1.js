@@ -40,6 +40,12 @@ function Fade_Interpolate(a,b){
                          10 * math_pow(t,3)) + a;
 }
 
+function Fade_Interpolate_2(a,b,c1,c2){
+    return t => (b-a-1/2*(c1+c2)) * (6 * math_pow(t,5) - 15 * math_pow(t,4) + 
+                         10 * math_pow(t,3)) + a + c1 * t + 1 / 2 * (c2 - c1)
+                         * math_pow(t,2);
+}
+
 // const fade = Fade_Interpolate(math_random(),math_random());
 // const my_point = t => make_point(t, fade(t));
 // (draw_points_squeezed_to_window(40000))(my_point);
